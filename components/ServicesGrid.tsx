@@ -35,14 +35,8 @@ const ServicesGrid = () => {
             >
               {/* Service Icon */}
               <div className={`w-14 h-14 rounded-xl ${getColorClass(service.color)} flex items-center justify-center mb-4`}>
-                <ImageWithFallback
-                  src={service.icon}
-                  alt={service.title}
-                  width={28}
-                  height={28}
-                  fallbackEmoji={service.fallbackIcon}
-                  className="w-7 h-7"
-                />
+                {/* Since icons are now emojis, we can display them directly */}
+                <span className="text-2xl">{service.icon}</span>
               </div>
               
               {/* Service Title */}
