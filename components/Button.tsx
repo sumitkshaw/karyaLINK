@@ -1,50 +1,30 @@
-"use client";
+// components/Button.tsx
+import { ButtonHTMLAttributes } from 'react';
 
-import ImageWithFallback from './ImageWithFallback';
-import ImagePlaceholder from './ImagePlaceholder';
-
-type ButtonProps = {
-  type: 'button' | 'submit';
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
-  icon?: string;
-  variant: string;
+  variant: 'btn_primary' | 'btn_outline';
   full?: boolean;
-  onClick?: () => void;
 }
 
-const Button = ({ type, title, icon, variant, full, onClick }: ButtonProps) => {
-  const getIconPlaceholder = () => {
-    if (icon?.includes('user')) return 'user';
-    if (icon?.includes('play')) return 'check';
-    if (icon?.includes('android')) return 'electric';
-    if (icon?.includes('apple')) return 'business';
-    return 'service';
+const Button = ({ title, variant, full, className = '', ...props }: ButtonProps) => {
+  const baseStyles = 'rounded-lg font-medium transition-all duration-300 flex items-center justify-center';
+  
+  const variants = {
+    btn_primary: 'bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 shadow-sm hover:shadow-md',
+    btn_outline: 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50 active:bg-primary-100',
   };
+
+  const sizeStyles = full ? 'w-full px-6 py-3' : 'px-6 py-3';
 
   return (
     <button
-      className={`flexCenter gap-3 rounded-full border ${variant} ${full && 'w-full'} transition-all hover:scale-[1.02] active:scale-[0.98]`}
-      type={type}
-      onClick={onClick}
+      className={`${baseStyles} ${variants[variant]} ${sizeStyles} ${className}`}
+      {...props}
     >
-      {icon && (
-        <ImageWithFallback 
-          src={icon}
-          alt={title}
-          width={24}
-          height={24}
-          fallbackComponent={
-            <ImagePlaceholder 
-              type={getIconPlaceholder()}
-              size={24}
-            />
-          }
-          style={{ width: 'auto', height: 'auto' }}
-        />
-      )}
-      <span className="bold-16 whitespace-nowrap cursor-pointer">{title}</span>
+      {title}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
