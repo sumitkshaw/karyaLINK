@@ -6,33 +6,29 @@ export const NAV_LINKS = [
   { href: '/about', key: 'about', label: 'About' },
 ];
 
-// SERVICES - Using existing images or emojis as fallback
+// SERVICES - Using emojis as primary icons
 export const SERVICES = [
   {
     title: 'Plumbers',
-    icon: '/wrench.svg', // Using existing wrench icon
-    fallbackIcon: '🔧', // Emoji fallback
+    icon: '🔧', // Emoji as primary icon
     description: 'Verified plumbing services for homes and businesses in Delhi',
     color: 'blue',
   },
   {
     title: 'Electricians',
-    icon: '/tech.svg', // Using existing tech.svg
-    fallbackIcon: '⚡', // Emoji fallback
+    icon: '⚡', // Emoji as primary icon
     description: 'Certified electrical work with safety guarantees',
     color: 'orange',
   },
   {
     title: 'Home Tutors',
-    icon: '/user.svg', // Using existing user.svg
-    fallbackIcon: '📚', // Emoji fallback
+    icon: '📚', // Emoji as primary icon
     description: 'Qualified tutors for all subjects and grades',
     color: 'green',
   },
   {
     title: 'Property Agents',
-    icon: '/location.svg', // Using existing location.svg
-    fallbackIcon: '🏠', // Emoji fallback
+    icon: '🏠', // Emoji as primary icon
     description: 'Trusted real estate assistance in Delhi/NCR',
     color: 'purple',
   },
@@ -43,48 +39,44 @@ export const HOW_IT_WORKS = [
   {
     number: '01',
     title: 'Verify',
-    icon: '✅', // Emoji
+    icon: '✅',
     description: 'Service providers undergo thorough background verification',
   },
   {
     number: '02',
     title: 'Connect',
-    icon: '🤝', // Emoji
+    icon: '🤝',
     description: 'Smart algorithm matches providers with right-fit customers',
   },
   {
     number: '03',
     title: 'Trust',
-    icon: '⭐', // Emoji
+    icon: '⭐',
     description: 'Community ratings and digital reputation ensure quality',
   },
 ];
 
-// TRUST FEATURES - Using emojis instead of missing SVG files
+// TRUST FEATURES
 export const TRUST_FEATURES = [
   {
     title: 'Verified Service History',
     description: 'Complete work history and customer feedback for each provider',
-    icon: '✅', // Check mark emoji
-    fallbackIcon: '✅',
+    icon: '✅',
   },
   {
     title: 'Locality-Specific Ratings',
     description: 'Ratings from customers in your specific Delhi locality',
-    icon: '📍', // Location pin emoji
-    fallbackIcon: '📍',
+    icon: '📍',
   },
   {
     title: 'Dispute Resolution',
     description: 'Protected payments and dedicated support for any issues',
-    icon: '🛡️', // Shield emoji
-    fallbackIcon: '🛡️',
+    icon: '🛡️',
   },
   {
     title: 'Digital Reputation Card',
     description: 'Each provider gets a verified digital identity card',
-    icon: '🎫', // Ticket emoji
-    fallbackIcon: '🎫',
+    icon: '🎫',
   },
 ];
 

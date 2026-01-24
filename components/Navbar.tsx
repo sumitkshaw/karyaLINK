@@ -31,19 +31,19 @@ const Navbar = () => {
       <div className="max-container padding-container flexBetween py-4">
         {/* Logo with responsive images */}
         <Link href="/" className="flex items-center gap-3">
-          {/* Mobile Logo */}
-          <div className="block md:hidden">
+          {/* Mobile Logo - Adjusted size */}
+          <div className="block lg:hidden">
             <Image
               src="/logo-pc.png"
               alt="KaryaLINK Logo"
-              width={200}
-              height={180}
-              className="object-contain"
+              width={160}
+              height={36}
+              className="object-contain h-9"
             />
           </div>
           
           {/* Desktop Logo */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Image
               src="/logo-pc.png"
               alt="KaryaLINK Logo"
@@ -72,7 +72,7 @@ const Navbar = () => {
                   {item.label}
                   {/* Animated underline */}
                   <span className={`
-                    absolute left-0 -bottom-1 h-0.5 bg-primary-600 transition-all duration-300
+                    absolute left-0 -bottom-1 h-0.5 bg-primary-500 transition-all duration-300
                     ${activeItem === item.id 
                       ? 'w-full opacity-100' 
                       : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
@@ -93,18 +93,18 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center gap-4">
+        {/* Mobile Header - Join Waitlist + Hamburger */}
+        <div className="lg:hidden flex items-center gap-3">
           <Button 
             type="button"
             title="Join Waitlist"
             variant="btn_primary"
             onClick={() => console.log("Join Waitlist clicked")}
-            className="text-sm px-4 py-2"
+            className="text-sm px-3 py-2 h-10"
           />
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-lg hover:bg-gray-50 transition-colors"
             aria-label="Toggle menu"
           >
             <svg 
@@ -123,27 +123,71 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Clean design without Join Waitlist button */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-50">
-          <div className="padding-container py-6 flex flex-col gap-1">
+        <div className="lg:hidden fixed top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-50">
+          <div className="padding-container py-4 flex flex-col">
             {navItems.map((item) => (
               <button 
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`
-                  py-3 px-2 text-gray-700 font-medium rounded-lg transition-all duration-200 text-left
+                  relative py-4 px-3 text-gray-700 font-medium transition-all duration-200 text-left
+                  border-b border-gray-100 last:border-b-0
                   ${activeItem === item.id 
-                    ? 'text-primary-600 font-semibold bg-primary-50' 
-                    : 'hover:text-primary-600 hover:font-semibold hover:bg-gray-50'
+                    ? 'text-primary-600 bg-primary-50/50' 
+                    : 'active:bg-gray-50'
                   }
                 `}
+                onTouchStart={() => setActiveItem(item.id)}
+                onTouchEnd={() => setActiveItem(null)}
               >
-                {item.label}
+                <div className="flex items-center justify-between">
+                  <span className={`transition-all duration-200 ${
+                    activeItem === item.id ? 'font-semibold' : ''
+                  }`}>
+                    {item.label}
+                  </span>
+                  {/* Subtle arrow indicator */}
+                  <svg 
+                    className={`w-4 h-4 transition-all duration-200 ${
+                      activeItem === item.id ? 'opacity-100 translate-x-0 text-primary-500' : 'opacity-0 -translate-x-1'
+                    }`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+                {/* Subtle active indicator line */}
+                <div className={`
+                  absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-primary-400 to-primary-300 transition-all duration-300
+                  ${activeItem === item.id ? 'w-full opacity-100' : 'w-0 opacity-0'}
+                `} />
               </button>
             ))}
+            
+            {/* Contact/Support item */}
+            <div className="pt-4 pb-2 px-3 border-t border-gray-100 mt-2">
+              <div className="text-xs text-gray-500 font-medium mb-1">Need help?</div>
+              <a 
+                href="mailto:contact.karyalink@gmail.com" 
+                className="text-sm text-primary-600 hover:text-primary-700 transition-colors"
+              >
+                contact.karyalink@gmail.com
+              </a>
+            </div>
           </div>
         </div>
+      )}
+
+      {/* Backdrop overlay for mobile menu */}
+      {isMenuOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/10 backdrop-blur-sm z-40 top-[72px]"
+          onClick={() => setIsMenuOpen(false)}
+        />
       )}
     </nav>
   );
