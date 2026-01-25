@@ -9,75 +9,110 @@ export const NAV_LINKS = [
 // SERVICES - Using emojis as primary icons
 export const SERVICES = [
   {
-    title: 'Plumbers',
-    icon: '🔧', // Emoji as primary icon
-    description: 'Verified plumbing services for homes and businesses in Delhi',
-    color: 'blue',
+    title: "Plumbing",
+    icon: "🚰",
+    description: "Emergency repairs, installations, and maintenance by certified plumbers",
+    color: "blue",
+    tags: ["Emergency", "Installation", "Maintenance"]
   },
   {
-    title: 'Electricians',
-    icon: '⚡', // Emoji as primary icon
-    description: 'Certified electrical work with safety guarantees',
-    color: 'orange',
+    title: "Electrical",
+    icon: "⚡",
+    description: "Safe electrical repairs, wiring, and fixture installations",
+    color: "orange",
+    tags: ["Repairs", "Wiring", "Safety"]
   },
   {
-    title: 'Home Tutors',
-    icon: '📚', // Emoji as primary icon
-    description: 'Qualified tutors for all subjects and grades',
-    color: 'green',
+    title: "Home Cleaning",
+    icon: "🧹",
+    description: "Professional deep cleaning and regular maintenance services",
+    color: "green",
+    tags: ["Deep Clean", "Regular", "Sanitized"]
   },
   {
-    title: 'Property Agents',
-    icon: '🏠', // Emoji as primary icon
-    description: 'Trusted real estate assistance in Delhi/NCR',
-    color: 'purple',
+    title: "Tutoring",
+    icon: "📚",
+    description: "Verified tutors for all subjects and competitive exams",
+    color: "purple",
+    tags: ["All Subjects", "Exams", "Online"]
   },
+  {
+    title: "Appliance Repair",
+    icon: "🔧",
+    description: "Expert repair for all home appliances with warranty",
+    color: "blue",
+    tags: ["Warranty", "Expert", "Same-day"]
+  },
+  {
+    title: "Painting",
+    icon: "🎨",
+    description: "Interior and exterior painting with premium materials",
+    color: "orange",
+    tags: ["Interior", "Exterior", "Premium"]
+  },
+  {
+    title: "Pest Control",
+    icon: "🐜",
+    description: "Safe and effective pest removal services",
+    color: "green",
+    tags: ["Safe", "Effective", "Eco-friendly"]
+  },
+  {
+    title: "Carpentry",
+    icon: "🪚",
+    description: "Custom furniture and woodwork by skilled carpenters",
+    color: "purple",
+    tags: ["Custom", "Furniture", "Skilled"]
+  }
 ];
 
 // HOW IT WORKS STEPS
 export const HOW_IT_WORKS = [
   {
-    number: '01',
-    title: 'Verify',
-    icon: '✅',
-    description: 'Service providers undergo thorough background verification',
+    number: "01",
+    icon: "🔍",
+    title: "Search & Discover",
+    description: "Browse profiles with ratings, work history, and verified credentials.",
+    benefits: ["Verified Profiles", "Ratings & Reviews", "Work History"]
   },
   {
-    number: '02',
-    title: 'Connect',
-    icon: '🤝',
-    description: 'Smart algorithm matches providers with right-fit customers',
+    number: "02",
+    icon: "📅",
+    title: "Book & Schedule",
+    description: "Select your preferred time slot and book instantly. Get real-time availability.",
+    benefits: ["Instant Booking", "Flexible ", "Transparent"]
   },
   {
-    number: '03',
-    title: 'Trust',
-    icon: '⭐',
-    description: 'Community ratings and digital reputation ensure quality',
-  },
+    number: "03",
+    icon: "✅",
+    title: "Track & Complete",
+    description: "Monitor your service in real-time with live updates.",
+    benefits: ["Live Tracking", "Secure Payment", "Service Feedback"]
+  }
 ];
 
 // TRUST FEATURES
 export const TRUST_FEATURES = [
   {
-    title: 'Verified Service History',
-    description: 'Complete work history and customer feedback for each provider',
-    icon: '✅',
+    title: "Verified Backgrounds",
+    icon: "🔒",
+    description: "Every professional undergoes rigorous background checks and verification"
   },
   {
-    title: 'Locality-Specific Ratings',
-    description: 'Ratings from customers in your specific Delhi locality',
-    icon: '📍',
+    title: "Digital Reputation",
+    icon: "📊",
+    description: "Transparent ratings and work history for informed decisions"
   },
   {
-    title: 'Dispute Resolution',
-    description: 'Protected payments and dedicated support for any issues',
-    icon: '🛡️',
+    title: "Secure Payments",
+    icon: "💳",
+    description: "Hassle-free payments with payment protection and refund guarantees"
   },
   {
-    title: 'Digital Reputation Card',
-    description: 'Each provider gets a verified digital identity card',
-    icon: '🎫',
-  },
+    title: "Real-time Tracking",
+    icon: "📍",
+    description: "Live location tracking and progress updates for your service"
+  }
 ];
 
 // PILOT AREAS IN DELHI

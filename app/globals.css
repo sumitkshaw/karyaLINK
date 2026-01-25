@@ -1,8 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* Remove Google Fonts import since we're using local fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Define Poppins font faces from local files */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/Poppins-Light.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-display: swap;
+}
 
 @layer base {
   * {
@@ -12,7 +62,15 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+
+  /* Apply Poppins to all heading elements */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -56,73 +114,73 @@
     @apply flex items-center justify-end;
   }
 
-  /* FONTS - Keep existing */
+  /* FONTS - Updated to use Poppins weights */
   .regular-64 {
-    @apply text-[64px] font-[400] leading-[120%];
+    @apply text-[64px] font-[400] leading-[120%] tracking-tight;
   }
 
   .regular-40 {
-    @apply text-[40px] font-[400] leading-[120%];
+    @apply text-[40px] font-[400] leading-[120%] tracking-tight;
   }
 
   .regular-32 {
-    @apply text-[32px] font-[400];
+    @apply text-[32px] font-[400] leading-[120%] tracking-tight;
   }
 
   .regular-24 {
-    @apply text-[24px] font-[400];
+    @apply text-[24px] font-[400] leading-[140%];
   }
 
   .regular-20 {
-    @apply text-[20px] font-[400];
+    @apply text-[20px] font-[400] leading-[140%];
   }
 
   .regular-18 {
-    @apply text-[18px] font-[400];
+    @apply text-[18px] font-[400] leading-[140%];
   }
 
   .regular-16 {
-    @apply text-[16px] font-[400];
+    @apply text-[16px] font-[400] leading-[150%];
   }
 
   .regular-14 {
-    @apply text-[14px] font-[400];
+    @apply text-[14px] font-[400] leading-[150%];
   }
 
   .medium-14 {
-    @apply text-[14px] font-[600];
+    @apply text-[14px] font-[500] leading-[150%];
   }
 
   .bold-88 {
-    @apply text-[88px] font-[700] leading-[120%];
+    @apply text-[88px] font-[700] leading-[120%] tracking-tighter;
   }
 
   .bold-64 {
-    @apply text-[64px] font-[700] leading-[120%];
+    @apply text-[64px] font-[700] leading-[120%] tracking-tight;
   }
 
   .bold-52 {
-    @apply text-[52px] font-[700] leading-[120%];
+    @apply text-[52px] font-[700] leading-[120%] tracking-tight;
   }
 
   .bold-40 {
-    @apply text-[40px] font-[700] leading-[120%];
+    @apply text-[40px] font-[700] leading-[120%] tracking-tight;
   }
 
   .bold-32 {
-    @apply text-[32px] font-[700] leading-[120%];
+    @apply text-[32px] font-[700] leading-[120%] tracking-tight;
   }
 
   .bold-20 {
-    @apply text-[20px] font-[700];
+    @apply text-[20px] font-[700] leading-[140%];
   }
 
   .bold-18 {
-    @apply text-[18px] font-[700];
+    @apply text-[18px] font-[700] leading-[140%];
   }
 
   .bold-16 {
-    @apply text-[16px] font-[700];
+    @apply text-[16px] font-[700] leading-[150%];
   }
 
   /* New Components */
@@ -147,4 +205,75 @@
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Optional: Add some custom Poppins-specific styling */
+.poppins-light {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.poppins-semibold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.poppins-extrabold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
 }
