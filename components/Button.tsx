@@ -1,13 +1,21 @@
 // components/Button.tsx
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   variant: 'btn_primary' | 'btn_outline';
   full?: boolean;
+  icon?: ReactNode;
 }
 
-const Button = ({ title, variant, full, className = '', ...props }: ButtonProps) => {
+const Button = ({ 
+  title, 
+  variant, 
+  full, 
+  icon,
+  className = '', 
+  ...props 
+}: ButtonProps) => {
   const baseStyles = 'rounded-lg font-medium transition-all duration-300 flex items-center justify-center';
   
   const variants = {
@@ -22,6 +30,7 @@ const Button = ({ title, variant, full, className = '', ...props }: ButtonProps)
       className={`${baseStyles} ${variants[variant]} ${sizeStyles} ${className}`}
       {...props}
     >
+      {icon && <span className="mr-2 flex items-center">{icon}</span>}
       {title}
     </button>
   );
