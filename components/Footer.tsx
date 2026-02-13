@@ -21,8 +21,8 @@ const Footer = () => {
                   <Image
                     src="/logo-mobile.png"
                     alt="KaryaLINK Logo"
-                    width={28}
-                    height={28}
+                    width={40}
+                    height={40}
                     className="object-contain"
                   />
                 </div>
@@ -37,36 +37,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links Column */}
-          <div className="flex flex-col gap-4">
-            <h4 className="bold-18 text-white mb-4">Quick Links</h4>
-            <ul className="regular-14 flex flex-col gap-3 text-gray-400">
-              <li>
-                <Link href="/services" className="hover:text-primary-300 transition-colors flex items-center gap-2">
-                  <span className="text-primary-400">→</span>
-                  <span>Our Services</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works" className="hover:text-primary-300 transition-colors flex items-center gap-2">
-                  <span className="text-primary-400">→</span>
-                  <span>How It Works</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/providers" className="hover:text-primary-300 transition-colors flex items-center gap-2">
-                  <span className="text-primary-400">→</span>
-                  <span>For Providers</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="hover:text-primary-300 transition-colors flex items-center gap-2">
-                  <span className="text-primary-400">→</span>
-                  <span>Pricing</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
+        
 
           {/* Contact Information Column */}
           <div className="flex flex-col gap-4">
